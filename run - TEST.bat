@@ -1,17 +1,18 @@
 @echo off
-echo [94mIris - Terminal[0m
+title=[94mIris - Terminal[0m
+echo %title%
 echo.
 echo Pushing to GitHub? Y/N
 set /p pushyn=
 cls
-echo [94mIris - Terminal[0m
+echo %title%
 echo.
 if "%pushyn%"=="Y" (
 	git add .
 	echo Input Commit Message:
 	set /p commit_message=Input Commit Message
 	cls
-	echo [94mIris - Terminal[0m
+	echo %title%
 	echo.
 	git commit -m "%commit_message%"
 	git remote remove origin
@@ -22,7 +23,7 @@ if "%pushyn%"=="Y" (
 	git pull origin main
 	pause
 	cls
-	echo [94mIris - Terminal[0m
+	echo %title%
 	echo.
 	python index.py
 	) else (
@@ -31,7 +32,7 @@ if "%pushyn%"=="Y" (
 				echo Input Commit Message:
 				set /p commit_message=
 				cls
-				echo [94mIris - Terminal[0m
+				echo %title%
 				echo.
 				sleep 0.5
         echo %commit_message%
@@ -44,19 +45,19 @@ if "%pushyn%"=="Y" (
 				git pull origin main
 				pause
 				cls
-				echo [94mIris - Terminal[0m
+				echo %title%
 				echo.
 				python index.py
 			) else (
 					if "%pushyn%"=="N" (
 						cls
-						echo [94mIris - Terminal[0m
+						echo %title%
 						echo.
 						python index.py
 					) else (
 							if "%pushyn%"=="n" (
 								cls
-								echo [94mIris - Terminal[0m
+								echo %title%
 								echo.
 								python index.py
 							) else (
