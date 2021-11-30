@@ -1,5 +1,6 @@
 @echo off
-title=[94mIris - Terminal[0m
+title Iris - Terminal
+set title=[94mIris - Terminal[0m
 echo %title%
 echo.
 echo Pushing to GitHub? Y/N
