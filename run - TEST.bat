@@ -36,12 +36,12 @@ if "%pushyn%"=="Y" (
 				echo %title%
 				echo.
 				sleep 0.5
-        echo %commit_message%
+        			echo %commit_message%
 				git commit -m "%commit_message%"
 				git remote remove origin
 				git remote add origin https://github.com/xspo-oky/iris-test
 				git fetch
-        git checkout main
+        			git checkout main
 				git push origin main
 				git pull origin main
 				pause
