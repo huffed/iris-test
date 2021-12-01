@@ -23,6 +23,9 @@ if "!pushyn!"=="Y" (
         git remote remove origin
         git remote add origin https://github.com/xspo-oky/iris-test
         git fetch
+        cls
+        echo !title!
+        echo.
         echo GitHub Repository Branches:
         git branch
         echo.
@@ -54,6 +57,9 @@ if "!pushyn!"=="Y" (
         git remote remove origin
         git remote add origin https://github.com/xspo-oky/iris-test
         git fetch
+        cls
+        echo !title!
+        echo.
         echo GitHub Repository Branches:
         git branch
         echo.
