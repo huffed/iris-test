@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
-title Iris - Terminal
-set title=[94mIris - Terminal[0m
+title Iris (TEST) - Terminal
+set title=[94mIris (TEST) - Terminal[0m
 echo !title!
 echo.
 echo Pushing to GitHub? (Y/N)
@@ -20,8 +20,6 @@ if "!pushyn!"=="Y" (
         echo !title!
         echo.
         git commit -m "!commit_message!"
-        git remote remove origin
-        git remote add origin https://github.com/xspo-oky/iris-test
         git fetch
         cls
         echo !title!
@@ -50,26 +48,25 @@ if "!pushyn!"=="Y" (
     echo Input Commit Message:
     set /p commit_message=
     if not "!commit_message!"=="" (
-        cls
-        echo !title!
-        echo.
-        git commit -m "!commit_message!"
-        git remote remove origin
-        git remote add origin https://github.com/xspo-oky/iris-test
-        git fetch
-        cls
-        echo !title!
-        echo.
-        echo GitHub Repository Branches:
-        git branch
-        echo.
-        echo Which branch do you want to push to?
-        set /p branch=
-        git push origin "!branch!"
-        timeout /t 5
-        cls
-        echo !title!
-        python index.py
+      pause
+      cls
+      echo !title!
+      echo.
+      git commit -m "!commit_message!"
+      git fetch
+      cls
+      echo !title!
+      echo.
+      echo GitHub Repository Branches:
+      git branch
+      echo.
+      echo Which branch do you want to push to?
+      set /p branch=
+      git push origin "!branch!"
+      timeout /t 5
+      cls
+      echo !title!
+      python index.py
     ) else (
         cls
         echo !title!
