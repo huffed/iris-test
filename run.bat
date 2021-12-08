@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
-title Iris (TEST) - Terminal
-set title=[94mIris (TEST) - Terminal[0m
+title Iris - Terminal
+set title=[94mIris - Terminal[0m
 echo !title!
 echo.
 echo Pushing to GitHub? (Y/N)

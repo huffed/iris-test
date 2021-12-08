@@ -14,7 +14,6 @@ async def on_ready():
 
   for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
-        # To blacklist cogs uncomment the three lines below and indent the two bottom lines of code
         if filename == "ctxDIR.py" or filename == "dir.py" or filename == "lockdown.py":
             pass
         else:
