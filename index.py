@@ -1,11 +1,9 @@
 import os
-# from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import config
 import asyncio
 
-# load_dotenv()
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = config.prefix, help_command=None, intents=intents)
 

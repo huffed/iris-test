@@ -13,6 +13,7 @@ class AdminCommands(commands.Cog):
     # @commands.Cog.listener()
 
     # Commands
+
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, user: discord.Member, *, reason=None):
@@ -101,6 +102,31 @@ class AdminCommands(commands.Cog):
         await member.remove_roles("DCRP | Member")
         await member.add_roles("MUTED")
         await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.has_permissions(manage_messages=True)
+    async def purge(self, ctx, amount: int):
+        if amount < 101:
+            await ctx.message.delete()
+            await ctx.channel.purge(limit=amount)
+            embed=discord.Embed(
+                color=0x0066ff,
+                description=f"**Purged {amount} messages**"
+            )
+            embed.set_footer(text=f"{config.default_footer}")
+            message = await ctx.channel.send(embed=embed)
+            await asyncio.sleep(2)
+            await message.delete()
+        else:
+            embed=discord.Embed(
+                color=0xde0000,
+                description="**You cannot purge more than 100 messages.**"
+            )
+            embed.set_author(name="Error", icon_url=config.error)
+            embed.set_footer(text=config.default_footer)
+            msg = await ctx.channel.send(embed=embed)
+            await asyncio.sleep(3)
+            await msg.delete()
 
     @kick.error
     async def kick_error(self, ctx, error):
