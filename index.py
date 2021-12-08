@@ -140,5 +140,4 @@ async def reload(ctx, extension):
     await asyncio.sleep(20)
     await message.delete()
 
-# client.run(os.getenv("TOKEN"))
 client.run(config.TOKEN)
