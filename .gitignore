@@ -1,3 +1,4 @@
 .idea
 __pycache__
 ./cogs/whiteringdusk.py
+./cogs/example.py

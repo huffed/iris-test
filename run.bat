@@ -30,6 +30,7 @@ if "!pushyn!"=="Y" (
         echo Which branch do you want to push to?
         set /p branch=
         git push origin "!branch!"
+        git pull origin "!branch!"
         timeout /t 5
         cls
         echo !title!
@@ -63,6 +64,7 @@ if "!pushyn!"=="Y" (
       echo Which branch do you want to push to?
       set /p branch=
       git push origin "!branch!"
+      git pull origin "!branch!"
       timeout /t 5
       cls
       echo !title!
